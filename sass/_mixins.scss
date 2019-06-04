@@ -1,0 +1,494 @@
+@mixin link-mix {
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2.4;
+    letter-spacing: normal;
+}
+
+
+@mixin text-mix {
+    font-family: Montserrat;
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: center;
+    color: $red-pink;
+}
+
+
+@mixin radio-mix {
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 100%;
+}
+
+
+@mixin gray-text-large {
+    font-family: Montserrat;
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #b4b4b4;
+    padding-left: 2rem;
+}
+
+.price-text {
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+
+@mixin absCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+@mixin respond($breakpoint) {
+
+    @if $breakpoint==small-phone {
+        @media only screen and (max-width: 25em) {
+            @content
+        }
+
+        ; //400px
+    }
+
+    @if $breakpoint==phone {
+        @media only screen and (max-width: 37.5em) {
+            @content
+        }
+
+        ; //600px
+    }
+
+    @if $breakpoint==tab-port {
+        @media only screen and (max-width: 56.25em) {
+            @content
+        }
+
+        ; //900px
+    }
+
+    @if $breakpoint==tab-land {
+        @media only screen and (max-width: 75em) {
+            @content
+        }
+
+        ; //1200px
+    }
+
+    @if $breakpoint==big-desktop {
+        @media only screen and (min-width: 112.5em) {
+            @content
+        }
+
+        ; //1800
+    }
+}
+
+
+/* Color palette */
+
+:root {
+    --red-pink: #f62f5e;
+    --black: #2e2e2e;
+    --white: #ffffff;
+    --very-light-pink: #efefef;
+    --battleship-grey: #6c6d7a;
+    --ice-blue: #eff5f8;
+}
+
+/* Text styles */
+
+@mixin headerbigleftwhite {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.8rem;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    color: var(--white);
+}
+
+@mixin headerbigcenteredwhite {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.8rem;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    text-align: center;
+    color: var(--white);
+}
+
+@mixin headerbigcenteredblack {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.8rem;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    text-align: center;
+    color: var(--black);
+}
+
+@mixin headermediumleftred {
+    font-family: Montserrat;
+    font-size: 2.4rem;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    color: var(--red-pink);
+}
+
+@mixin headerbigitalicleftwhite {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.8rem;
+    font-weight: normal;
+    font-style: italic;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    color: var(--white);
+}
+
+@mixin headerbigleftblack {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.8rem;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    color: var(--black);
+}
+
+@mixin headermediumleftblack {
+    font-family: Montserrat;
+    font-size: 2.4rem;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    color: var(--black);
+}
+
+.logotypewhite {
+    font-family: Montserrat;
+    font-size: 2.4rem;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: 6px;
+    color: var(--white);
+}
+
+@mixin headermediumcenteredred {
+    font-family: Montserrat;
+    font-size: 2.4rem;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    text-align: center;
+    color: var(--red-pink);
+}
+
+@mixin headermediumcenteredblack {
+    font-family: Montserrat;
+    font-size: 2.4rem;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    text-align: center;
+    color: var(--black);
+}
+
+@mixin logotypered {
+    font-family: Montserrat;
+    font-size: 2.4rem;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 4px;
+    color: var(--red-pink);
+}
+
+@mixin headermediumleftwhite {
+    font-family: Montserrat;
+    font-size: 2.4rem;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    color: var(--white);
+}
+
+@mixin buttonmediumcenteredwhite {
+    font-family: Montserrat;
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: center;
+    color: var(--white);
+}
+
+@mixin bodynormalcenteredwhite {
+    font-family: 'Open Sans';
+    font-size: 1.6rem;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: center;
+    color: var(--white);
+}
+
+@mixin headersmallcenterred {
+    font-family: Montserrat;
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: center;
+    color: var(--red-pink);
+}
+
+@mixin headermediumcenteredwhite {
+    font-family: Montserrat;
+    font-size: 2.4rem;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: center;
+    color: var(--white);
+}
+
+@mixin headersmallleftblack {
+    font-family: LucidaGrande;
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: var(--black);
+}
+
+@mixin headersmallleftred {
+    font-family: Montserrat;
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: var(--red-pink);
+}
+
+@mixin headersmallleftgrey {
+    font-family: Montserrat;
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #b4b4b4;
+}
+
+@mixin headersmallcenterblack {
+    font-family: Montserrat;
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: center;
+    color: var(--black);
+}
+
+@mixin bodynormalleftwhite {
+    font-family: 'Open Sans';
+    font-size: 1.6rem;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 0.7px;
+    color: var(--white);
+}
+
+@mixin inputbiggrey {
+    font-family: Montserrat;
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #bababa;
+}
+
+@mixin headersmallleftwhite {
+    font-family: Montserrat;
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: var(--white);
+}
+
+@mixin bodynormalleftblack {
+    font-family: 'Open Sans';
+    font-size: 1.6rem;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: var(--black);
+}
+
+@mixin buttonmediumcenteredred {
+    font-family: Montserrat;
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: center;
+    color: var(--red-pink);
+}
+
+@mixin topbarnormalwhite {
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2.4;
+    letter-spacing: normal;
+    color: var(--white);
+}
+
+@mixin topbarnormalblack {
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2.4;
+    letter-spacing: normal;
+    color: var(--black);
+}
+
+@mixin inputsmallwhite {
+    font-family: 'Open Sans';
+    font-size: 1.4rem;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.71;
+    letter-spacing: normal;
+    color: var(--white);
+}
+
+@mixin topbarnormalred {
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2.4;
+    letter-spacing: normal;
+    color: var(--red-pink);
+}
+
+@mixin inputsmalgrey {
+    font-family: 'Open Sans';
+    font-size: 1.4rem;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.71;
+    letter-spacing: normal;
+    color: #bababa;
+}
+
+@mixin buttonsmallcenteredred {
+    font-family: Montserrat;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2;
+    letter-spacing: normal;
+    text-align: center;
+    color: var(--red-pink);
+}
+
+@mixin buttonsmallcenteredwhite {
+    font-family: Montserrat;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2;
+    letter-spacing: normal;
+    text-align: center;
+    color: var(--white);
+}
