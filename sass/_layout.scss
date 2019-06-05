@@ -7,6 +7,10 @@
     @include respond(tab-port) {
         grid-template-rows: minmax(7.2rem, auto) minmax(179.9rem, auto) auto 24rem;
     }
+
+    @include respond(phone) {
+        grid-template-rows: minmax(7.2rem, auto) auto 24rem;
+    }
 }
 
 .header-top {
@@ -42,6 +46,7 @@
     grid-template-columns: auto auto;
     grid-column-gap: 1.9rem;
     align-items: center;
+    cursor: pointer;
 }
 
 .pool-ball-wrapper {
@@ -86,6 +91,7 @@
 .white-pool-cart-wrapper {
     display: flex;
     position: relative;
+    cursor: pointer;
 
     @include respond(tab-port) {
         padding-right: 3rem;
@@ -377,6 +383,10 @@
     position: relative;
     height: 336px;
     max-height: 336px;
+
+    @include respond(phone) {
+        display: none;
+    }
 }
 
 .column-3 {
@@ -397,6 +407,7 @@
     top: 0;
     align-content: center;
     padding: 0 0 0 10rem;
+
 }
 
 
@@ -622,4 +633,82 @@
 
 .showcase-container {
     display: grid;
+    background-color: $gray-less;
+    position: relative;
+
+    @include respond(phone) {
+        background-color: white;
+    }
+}
+
+.search-cart-wrapper {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 2.9rem;
+
+    @include respond(phone) {
+        display: none;
+    }
+}
+
+.hero {
+    width: 100%;
+    position: relative;
+
+    @include respond(phone) {
+        display: none;
+    }
+
+    &>img {
+        width: 100%;
+    }
+
+    &>div {
+        display: grid;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.showcase-content {
+    padding: 2.4rem 3rem;
+    display: grid;
+    grid-template-columns: minmax(min-content, 62rem) auto;
+    grid-column-gap: 20px;
+    justify-content: center;
+
+    @include respond(tab-port) {
+        grid-template-columns: auto;
+        padding: 0;
+        grid-template-rows: 648px auto;
+        height: 100%;
+        align-items: center;
+        grid-row-gap: 24px;
+        margin-bottom: 24px;
+    }
+
+
+    &__left {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.cart-item-price-wrapper {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: space-between;
+
+
+    &>h2 {
+        height: 33px;
+        width: auto;
+    }
 }

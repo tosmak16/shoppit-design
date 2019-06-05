@@ -29,13 +29,170 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <script src="/scripts/toggleBody.js"></script>
+    <script src="/scripts/showCart.js"></script>
+
 
     <title>Details</title>
   </head>
   <body>
     <div class="detail-container">
+        
       <!-- ********** HEADER TOP START ************* -->
-
+      <div id="cart-modal" class="cart-modal">
+            <img id="close-cart-icon" src="/images/close-icon-black.svg" alt="close-icon">
+          <h2 class="header-medium-left-black">4 Items In Your Cart</h2>
+          <div class="cart-table">
+            <div class="cart-table__head">
+              <span class="header-small-left-grey">Item</span>
+              <span class="header-small-left-grey">Size</span>
+              <span class="header-small-left-grey">Quanity</span>
+              <span class="header-small-left-grey pull-right">Price</span>
+            </div>
+            <span class="cart-table__ruler">&nbsp;</span>
+  
+            <section class="cart-item-price-wrapper">
+              <div class="cart-table__item">
+                <div class="cart-table__item__left">
+                  <div class="image-holder">
+                    <img
+                      src="/images/cart-image-1.jpg"
+                      srcset="
+                        /images/cart-image-1@2x.jpg 1x,
+                        /images/cart-image-1@3x.jpg 2x
+                      "
+                    />
+                  </div>
+                </div>
+                <div class="cart-table__item__right">
+                  <h2 class="header-small-left-black">Green T-shirt 2016</h2>
+                  <p class="body-normal-left-black">Men BK3569</p>
+                  <span>
+                    <img src="/images/close-icon-pink.svg" alt="" />
+                    Remove
+                  </span>
+                </div>
+              </div>
+  
+              <div class="size-wrapper"><span>XX</span> <span>L</span></div>
+  
+              <div class="input-quantity-group">
+                <img src="/images/minus.svg" alt="minus" class="minus" />
+                <input type="text" value="2" class="quantity-input-text" />
+                <img src="/images/plus.svg" alt="minus" class="plus" />
+              </div>
+  
+              <h2 class="header-medium-centered-black pull-right">£21</h2>
+            </section>
+            <section class="cart-item-price-wrapper">
+              <div class="cart-table__item">
+                <div class="cart-table__item__left">
+                  <div class="image-holder">
+                    <img
+                      src="/images/cart-image-2.jpg"
+                      srcset="
+                        /images/cart-image-2@2x.jpg 1x,
+                        /images/cart-image-2@3x.jpg 2x
+                      "
+                    />
+                  </div>
+                </div>
+                <div class="cart-table__item__right">
+                  <h2 class="header-small-left-black">Purple T-shirt 2016</h2>
+                  <p class="body-normal-left-black">Men BK3569</p>
+                  <span>
+                    <img src="/images/close-icon-pink.svg" alt="" />
+                    Remove
+                  </span>
+                </div>
+              </div>
+  
+              <div class="size-wrapper"><span>X</span> <span>L</span></div>
+  
+              <div class="input-quantity-group">
+                <img src="/images/minus.svg" alt="minus" class="minus" />
+                <input type="text" value="2" class="quantity-input-text" />
+                <img src="/images/plus.svg" alt="minus" class="plus" />
+              </div>
+  
+              <h2 class="header-medium-centered-black pull-right">£13</h2>
+            </section>
+            <section class="cart-item-price-wrapper">
+              <div class="cart-table__item">
+                <div class="cart-table__item__left">
+                  <div class="image-holder">
+                    <img
+                      src="/images/cart-image-3.jpg"
+                      srcset="
+                        /images/cart-image-3@2x.jpg 1x,
+                        /images/cart-image-3@3x.jpg 2x
+                      "
+                    />
+                  </div>
+                </div>
+                <div class="cart-table__item__right">
+                  <h2 class="header-small-left-black">Yellow T-shirt 2016</h2>
+                  <p class="body-normal-left-black">Men BK3569</p>
+                  <span>
+                    <img src="/images/close-icon-pink.svg" alt="" />
+                    Remove
+                  </span>
+                </div>
+              </div>
+  
+              <div class="size-wrapper"><span>L</<span></div>
+  
+              <div class="input-quantity-group">
+                <img src="/images/minus.svg" alt="minus" class="minus" />
+                <input type="text" value="2" class="quantity-input-text" />
+                <img src="/images/plus.svg" alt="minus" class="plus" />
+              </div>
+  
+              <h2 class="header-medium-centered-black pull-right">£42</h2>
+            </section>
+            <section class="cart-item-price-wrapper">
+                  <div class="cart-table__item">
+                    <div class="cart-table__item__left">
+                      <div class="image-holder">
+                        <img
+                          src="/images/cart-image-4.jpg"
+                          srcset="
+                            /images/cart-image-4@2x.jpg 1x,
+                            /images/cart-image-4@3x.jpg 2x
+                          "
+                        />
+                      </div>
+                    </div>
+                    <div class="cart-table__item__right">
+                      <h2 class="header-small-left-black">Red T-shirt 2016</h2>
+                      <p class="body-normal-left-black">Men BK3569</p>
+                      <span>
+                        <img src="/images/close-icon-pink.svg" alt="" />
+                        Remove
+                      </span>
+                    </div>
+                  </div>
+      
+                  <div class="size-wrapper"><span>X</span><span>S</span></div>
+      
+                  <div class="input-quantity-group">
+                    <img src="/images/minus.svg" alt="minus" class="minus" />
+                    <input type="text" value="2" class="quantity-input-text" />
+                    <img src="/images/plus.svg" alt="minus" class="plus" />
+                  </div>
+      
+                  <h2 class="header-medium-centered-black pull-right">£24</h2>
+                </section>
+          </div>
+          <div class="cart-footer">
+                  <div class="button-medium-centered-white">
+                          <button class="button button--white">Back to Shop</button>
+                  </div>
+  
+                  <div class="button-medium-center-red">
+                          <button class="button">Add to cart</button>
+                        </div>
+          </div>
+        </div>
       <header class="header-top">
         <div>
           <span>Hi! <a href="#" class="link--pink">Sign in</a></span>
@@ -54,7 +211,7 @@
           <span>£ GBP</span>
         </div>
 
-        <div class="your-cart-wrapper">
+        <div id="your-cart-wrapper" class="your-cart-wrapper">
           <div class="pool-cart-wrapper">
             <img src="images/cart.svg" class="cart" />
             <div class="pool-ball-wrapper">
